@@ -37,7 +37,6 @@ public class CourierLoginTest {
 
         ValidatableResponse response = courierClient.loginCourier(CourierCredentials.form(courier));
 
-        int statusCode = response.extract().statusCode();
         courierId = response.extract().path("id");
 
         response.assertThat().statusCode(200); //проверяем, что статус код ответа 200

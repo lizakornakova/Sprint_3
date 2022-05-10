@@ -4,6 +4,9 @@ import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import ru.yandex.samokat.model.Order;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 public class OrderClient extends SamokatBaseClient {
@@ -21,10 +24,11 @@ public class OrderClient extends SamokatBaseClient {
 
     @Step("Send POST request to /api/v1/orders/cancel to cancel an order")
     public ValidatableResponse cancelOrder(int trackNum) {
-        String idJson = "{\"name\": "+((Integer)trackNum).toString()+"}";
+        Map<String, Object> dataBody = new HashMap<>();
+        dataBody.put( "track", trackNum );
         return given()
                 .spec(getBaseSpec())
-                .body(idJson)
+                .body(dataBody)
                 .when()
                 .post(ORDER_PATH + "/cancel")
                 .then();
