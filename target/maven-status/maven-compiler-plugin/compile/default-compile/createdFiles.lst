@@ -1,0 +1,8 @@
+ru\yandex\samokat\client\OrderClient.class
+ru\yandex\samokat\client\CourierClient.class
+ru\yandex\samokat\model\CourierRandomizer.class
+ru\yandex\samokat\model\Order.class
+ru\yandex\samokat\client\SamokatBaseClient.class
+ru\yandex\samokat\model\CourierCredentials.class
+ru\yandex\samokat\model\Courier.class
+ru\yandex\samokat\model\OrderRandomizer.class

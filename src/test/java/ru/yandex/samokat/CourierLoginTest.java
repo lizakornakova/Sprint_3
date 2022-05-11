@@ -36,7 +36,7 @@ public class CourierLoginTest {
     public void courierCanLoginWithValidCredentialsTest() {
 
         ValidatableResponse response = courierClient.loginCourier(CourierCredentials.form(courier));
-
+        //удалила ненужную проверку
         courierId = response.extract().path("id");
 
         response.assertThat().statusCode(200); //проверяем, что статус код ответа 200

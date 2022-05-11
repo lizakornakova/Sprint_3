@@ -24,8 +24,9 @@ public class OrderClient extends SamokatBaseClient {
 
     @Step("Send POST request to /api/v1/orders/cancel to cancel an order")
     public ValidatableResponse cancelOrder(int trackNum) {
+        //добавила Map для json в body
         Map<String, Object> dataBody = new HashMap<>();
-        dataBody.put( "track", trackNum );
+        dataBody.put("track", trackNum);
         return given()
                 .spec(getBaseSpec())
                 .body(dataBody)
